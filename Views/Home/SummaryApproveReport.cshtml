@@ -1,0 +1,53 @@
+﻿@model List<SimpleWKReport.Models.SummaryApproveAmountReport>
+@{
+    ViewBag.Title = "SummaryApproveReport";
+}
+                <b>Summary Approve Report</b>      <b style="margin-left:33rem">15/08/2018-31/08/2018</b>
+    <br />
+    <br />
+    <table>
+        <tr style="text-align:center">
+            <th scope="col" style="width:5%">No</th>
+            <th scope="col" style="width:15%">Marketing Code</th>
+            <th scope="col" style="width:20%"> Margeting Name</th>
+            <th scope="col" style="width:15%">Agent Code</th>
+            <th scope="col" style="width:25%">Agent Name</th>
+            <th scope="col" style="width:15%">Approve Date</th>
+            <th scope="col" style="width:10%">Amount</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+             <tr>
+                 <td scope="row" style="text-align:right">
+                     @item.No
+                 </td>
+                 <td style="text-align:right">
+                     @item.MarketingCode
+                 </td>
+                 <td>
+                     @item.MarketingName
+                 </td>
+                 <td>
+                     @item.AgentCode
+                 </td>
+                 <td>
+                     @item.AgentName
+                 </td>
+                 <td style="text-align:center">
+                     @item.ApproveDate
+                 </td>
+                 <td style="text-align:center">
+                     <xsl:value-of select='format-number(500100, "#.00")' />@item.Amount
+                 </td>
+             </tr>
+        }
+
+            
+        </table>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>

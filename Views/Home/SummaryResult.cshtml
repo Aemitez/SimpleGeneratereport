@@ -1,0 +1,71 @@
+﻿@model List<SimpleWKReport.Models.SummaryReport>
+@{
+    ViewBag.Title = "SummaryResult";
+}
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+
+            <b>Summary Transaction Result</b>
+        
+            <b style="margin-left:10rem">01/08/2018 - 31/08/2018</b>
+        
+            <b style="margin-left:10rem">Date:26/08/2018 Time:13:17</b>
+   
+
+    <br />
+    <br />
+
+    <table border="1">
+        <theads>
+            <tr style="text-align:center">
+                <th rowspan="3" style="width:5%">No</th>
+                <th rowspan="3" style="width:10%">Marketing code</th>
+                <th rowspan="3" style="width:10%">Marketing Name</th>
+                <th rowspan="3" style="width:10%">Agent Code</th>
+                <th rowspan="3" style="width:10%">Agent Name</th>
+                <th rowspan="3" style="width:20%">Transaction</th>
+                <th colspan="9" style="width:50%">Status</th>
+            </tr>
+            <tr style="text-align:center">
+                <th colspan="3">CHECK NCB</th>
+                <th colspan="6">FULL REGISTER</th>
+            </tr>
+            <tr style="text-align:center">
+                <th>REQ MORE DOC</th>
+                <th>PASS</th>
+                <th>NOT PASS</th>
+                <th>REQ MORE DOC</th>
+                <th>PENDING</th>
+                <th>CANVEL BY CUSTOMER</th>
+                <th>CANCEL BY JDW</th>
+                <th>APPROVE</th>
+                <th>REJECT</th>
+            </tr>
+        </theads>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="text-align:right">
+                    <td>@item.No</td>
+                    <td>@item.MarketingCode</td>
+                    <td>@item.MarketingName</td>
+                    <td>@item.AgentCode</td>
+                    <td>@item.AgentName</td>
+                    <td>@item.Transaction</td>
+                    <td>@item.CheckNCBReqMoreDoc</td>
+                    <td>@item.CheckNCBPass</td>
+                    <td>@item.CheckNCBNotpass</td>
+                    <td>@item.FullRegisterReqMoreDoc</td>
+                    <td>@item.FullRegisterPending</td>
+                    <td>@item.FullRegisterCancelByCustomer</td>
+                    <td>@item.FullRegisterCancelByJDM</td>
+                    <td>@item.FullRegisterApprove</td>
+                    <td>@item.FullRegisterReject</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>

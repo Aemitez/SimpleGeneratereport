@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>Generate Report</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                @using (Html.BeginForm("Report", "Home", new { reportname = "SummaryApproveReport" }, FormMethod.Post))
+                {
+                    <button type="submit" class="btn btn-outline-danger">SummaryApproveReport</button>
+                }
+            </div>
+            <div class="col-3">
+                @using (Html.BeginForm("Report", "Home", new { reportname = "SummaryResult" }, FormMethod.Post))
+                {
+                    <button type="submit" class="btn btn-outline-info">SummaryResult</button>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
